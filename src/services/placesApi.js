@@ -1,5 +1,5 @@
 export async function searchPlaces(query) {
-  const res = await fetch(`/.netlify/functions/place-search?query=${encodeURIComponent(query)}`);
+  const res = await fetch(`/api/place-search?query=${encodeURIComponent(query)}`);
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Erro desconhecido' }));
     throw new Error(err.error || `HTTP ${res.status}`);
@@ -9,7 +9,7 @@ export async function searchPlaces(query) {
 }
 
 export async function getPlaceDetails(placeId) {
-  const res = await fetch(`/.netlify/functions/place-details?place_id=${encodeURIComponent(placeId)}`);
+  const res = await fetch(`/api/place-details?place_id=${encodeURIComponent(placeId)}`);
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Erro desconhecido' }));
     throw new Error(err.error || `HTTP ${res.status}`);
