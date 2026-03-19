@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #1A73E8;
+  --color-brand-dark: #0D47A1;
+  --color-success: #34A853;
+  --color-success-light: #43A047;
+  --color-warning: #FBBC04;
+  --color-danger: #EA4335;
+  --color-orange: #E65100;
+  --color-gray: #5F6368;
+  --color-bg: #F8F9FA;
+  --color-card: #FFFFFF;
+  --color-border: #DADCE0;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: #202124;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gaugeArc {
+  from { stroke-dashoffset: var(--gauge-circumference); }
+  to { stroke-dashoffset: var(--gauge-offset); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
